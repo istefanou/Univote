@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Univote</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="username">Username</string>
+    <string name="password">Password</string>
+    <string name="email">Email</string>
+    <string name="login">Είσοδος</string>
+    <string name="real_name">Ονοματεπώνυμο</string>
+    <string name="title_activity_login">Είσοδος</string>
+    <string name="register_button">Δεν έχεις λογαριασμό;</string>
+    <string name="title_activity_register">Εγγραφή</string>
+    <string name="welcome">WELCOME</string>
+    <string name="is_login">You have been successfully login </string>
+    <string name="sign_up">Ολοκλήρωση εγγραφής</string>
+    <string name="sign_up_with_camera">Ολοκλήρωση εγγραφής με φωτογραφία πάσου</string>
+    <string name="radio_male">Male</string>
+    <string name="radio_female">Female</string>
+    <string name="year">Έτος</string>
+    <string name="button_top">TOP POLLS</string>
+    <string name="button_subvotes">SUB VOTES</string>
+    <string name="button_results">RESULTS</string>
+    <string name="title_activity_main_menu">Κύριο μενού</string>
+    <string-array name="poll_types">
+        <item>Yes-No</item>
+        <item>Poll</item>
+        <item>Answer</item>
+
+    </string-array>
+</resources>
