@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+
+    <Button
+        android:id="@+id/subvotes"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/top"
+        android:text="SUBVOTES"
+        android:onClick="disable_button"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        android:layout_marginLeft="12dp"
+        android:layout_toRightOf="@+id/top" />
+
+    <Button
+        android:id="@+id/result"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="0dp"
+        android:layout_toEndOf="@+id/subvotes"
+        android:text="RESULTS"
+        android:onClick="disable_button"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        android:layout_marginLeft="12dp"
+        android:layout_toRightOf="@+id/subvotes" />
+
+    <Button
+        android:id="@+id/top"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="TOP"
+        android:enabled="false"
+        android:onClick="disable_button"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp" />
+
+    <Button
+        android:id="@+id/add_poll"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_marginBottom="14dp"
+        android:clickable="true"
+        android:onClick="new_poll"
+        android:text="+"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/subvotes"        >
+
+        <LinearLayout
+            android:id="@+id/linear_layout_polls"
+            android:layout_width="match_parent"
+            android:layout_height="615dp"
+            android:layout_marginTop="6dp"
+            android:orientation="vertical"></LinearLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/button_create_category"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/add_poll"
+        android:layout_marginEnd="-91dp"
+        android:layout_marginRight="-91dp"
+        android:layout_marginBottom="14dp"
+        android:layout_toStartOf="@+id/add_poll"
+        android:layout_toLeftOf="@+id/add_poll"
+        android:onClick="create_category"
+        android:text="Category" />
+
+
+</RelativeLayout>

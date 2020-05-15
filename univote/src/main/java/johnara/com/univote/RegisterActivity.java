@@ -37,13 +37,14 @@ import java.util.List;
 
 public class RegisterActivity extends ActionBarActivity {
 
-    protected EditText username;
+    private EditText am;
     private EditText password;
     private EditText email;
-    private EditText real_name;
+    private EditText onomateponimo;
+    private EditText tmima;
     private RadioGroup radioSexGroup;
-    private EditText year;
-    protected String enteredUsername;
+    private EditText etos_eisagwghs;
+    private String enteredUsername;
     private final String serverUrl = "http://192.168.1.3/univote/index.php";
 
     @Override
@@ -51,25 +52,26 @@ public class RegisterActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        username = (EditText)findViewById(R.id.username_field);
+        am = (EditText)findViewById(R.id.username_field);
         password = (EditText)findViewById(R.id.password_field);
         email = (EditText)findViewById(R.id.email_field);
-        real_name = (EditText)findViewById(R.id.real_name_field);
+        onomateponimo = (EditText)findViewById(R.id.real_name_field);
         radioSexGroup = (RadioGroup) findViewById(R.id.radioSex);
-        year = (EditText)findViewById(R.id.year_field);
+        etos_eisagwghs = (EditText)findViewById(R.id.year_field);
+        tmima = (EditText)findViewById(R.id.tmima_field);
         Button signUpButton = (Button)findViewById(R.id.sign_up);
 
         signUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                enteredUsername = username.getText().toString();
+                enteredUsername = ProduceUsername();
                 String enteredPassword = password.getText().toString();
                 String enteredEmail = email.getText().toString();
-                String enteredRealName = real_name.getText().toString();
+                String enteredRealName = onomateponimo.getText().toString();
                 int selectedId = radioSexGroup.getCheckedRadioButtonId();
                 RadioButton radioSexButton = (RadioButton) findViewById(selectedId);
                 String enteredGender;
-                String enteredYear = year.getText().toString();
+                String enteredYear = etos_eisagwghs.getText().toString();
                 if(radioSexButton.getText().equals("Male")) enteredGender="1";
                 else enteredGender="0";
 
@@ -82,11 +84,16 @@ public class RegisterActivity extends ActionBarActivity {
                     return;
                 }
                 // request authentication with remote server4
-                AsyncDataClass asyncRequestObject = new AsyncDataClass();
+                Register asyncRequestObject = new Register();
                 asyncRequestObject.execute(serverUrl, enteredUsername, enteredPassword, enteredEmail, enteredRealName, enteredYear, enteredGender);
             }
         });
     }
+
+    private String ProduceUsername(){
+        return tmima.getText().toString()+am.getText().toString();
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
@@ -108,7 +115,7 @@ public class RegisterActivity extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
-    private class AsyncDataClass extends AsyncTask<String, Void, String> {
+    private class Register extends AsyncTask<String, Void, String> {
 
         @Override
         protected String doInBackground(String... params) {

@@ -11,7 +11,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/username"
+        android:text="@string/am"
         android:id="@+id/username"
         android:textColor="#ffffff"
         android:textSize="16sp"
@@ -33,13 +33,36 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/password"
-        android:id="@+id/password"
+        android:text="@string/tmima"
+        android:id="@+id/tmima"
         android:textColor="#ffffff"
         android:textSize="16sp"
         android:layout_below="@+id/username_field"
         android:layout_alignLeft="@+id/username_field"
         android:layout_alignStart="@+id/username_field"
+        android:layout_marginTop="30dp" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:ems="10"
+        android:id="@+id/tmima_field"
+        android:layout_marginRight="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#ffffff"
+        android:layout_below="@+id/tmima"
+        android:layout_alignLeft="@+id/tmima"
+        android:layout_alignStart="@+id/tmima" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/password"
+        android:id="@+id/password"
+        android:textColor="#ffffff"
+        android:textSize="16sp"
+        android:layout_below="@+id/tmima_field"
+        android:layout_alignLeft="@+id/tmima_field"
+        android:layout_alignStart="@+id/tmima_field"
         android:layout_marginTop="30dp" />
     <EditText
         android:layout_width="match_parent"
@@ -53,6 +76,7 @@
         android:layout_below="@+id/password"
         android:layout_alignLeft="@+id/password"
         android:layout_alignStart="@+id/password" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -150,13 +174,12 @@
     </RadioGroup>
 
     <Button
+        android:id="@+id/sign_up"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/sign_up"
-        android:id="@+id/sign_up"
         android:layout_below="@+id/radioSex"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="24dp"
+        android:text="@string/sign_up" />
 
     <Button
         android:layout_width="wrap_content"

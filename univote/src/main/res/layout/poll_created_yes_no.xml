@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_centerHorizontal="true"
+    android:orientation="vertical">
+
+    <CheckBox
+        android:id="@+id/anonymity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/textview_subject"
+        android:layout_alignLeft="@+id/textview_subject"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="157dp"
+        android:layout_marginLeft="157dp"
+        android:layout_marginTop="36dp"
+        android:layout_marginEnd="-157dp"
+        android:layout_marginRight="-157dp"
+        android:buttonTint="@android:color/black"
+        android:enabled="false"
+        android:text="Anonymity"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textview_subject"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="125dp"
+        android:layout_marginLeft="125dp"
+        android:layout_marginTop="-1dp"
+        android:ems="10"
+        android:text="Subject"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/textview_question"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview_subject"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="6dp"
+        android:ems="10"
+        android:text="Question"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/time_remaining"
+        android:layout_width="126dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/anonymity"
+        android:layout_alignEnd="@+id/textview_subject"
+        android:layout_alignRight="@+id/textview_subject"
+        android:layout_marginTop="-61dp"
+        android:layout_marginEnd="-117dp"
+        android:layout_marginRight="-117dp"
+        android:ems="10"
+        android:textColor="@android:color/black" />
+
+    <LinearLayout
+        android:layout_width="130dp"
+        android:layout_height="118dp"
+        android:layout_below="@+id/textview_question"
+        android:layout_marginTop="9dp"
+        android:orientation="vertical"
+
+        >
+
+        <Button
+            android:id="@+id/button_yes"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Yes" />
+
+        <Button
+            android:id="@+id/button_no"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="No" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/button_forum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textview_subject"
+        android:layout_alignEnd="@+id/textview_question"
+        android:layout_alignRight="@+id/textview_question"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="-27dp"
+        android:layout_marginRight="-27dp"
+        android:text="Forum" />
+
+</RelativeLayout>

@@ -11,7 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
@@ -34,11 +33,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 
-public class MainActivity extends ActionBarActivity {
+public class StartingActivity extends ActionBarActivity {
 
-    protected EditText username;
+    private EditText username;
     private EditText password;
-    protected String enteredUsername;
+    private String enteredUsername;
     private final String serverUrl = "http://192.168.1.4/univote/index.php";
 
     @Override
@@ -60,11 +59,11 @@ public class MainActivity extends ActionBarActivity {
                 String enteredPassword = password.getText().toString();
 
                 if(enteredUsername.equals("") || enteredPassword.equals("")){
-                    Toast.makeText(MainActivity.this, "Username or password must be filled", Toast.LENGTH_LONG).show();
+                    Toast.makeText(StartingActivity.this, "Username or password must be filled", Toast.LENGTH_LONG).show();
                     return;
                 }
                 if(enteredUsername.length() <= 1 || enteredPassword.length() <= 1){
-                    Toast.makeText(MainActivity.this, "Username or password length must be greater than one", Toast.LENGTH_LONG).show();
+                    Toast.makeText(StartingActivity.this, "Username or password length must be greater than one", Toast.LENGTH_LONG).show();
                     return;
                 }
                 // request authentication with remote server4
@@ -76,7 +75,7 @@ public class MainActivity extends ActionBarActivity {
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, RegisterActivity.class);
+                Intent intent = new Intent(StartingActivity.this, RegisterActivity.class);
                 startActivity(intent);
             }
         });
@@ -139,16 +138,16 @@ public class MainActivity extends ActionBarActivity {
             super.onPostExecute(result);
             System.out.println("Resulted Value: " + result);
             if(result.equals("") || result == null){
-                Toast.makeText(MainActivity.this, "Server connection failed", Toast.LENGTH_LONG).show();
+                Toast.makeText(StartingActivity.this, "Server connection failed", Toast.LENGTH_LONG).show();
                 return;
             }
             int jsonResult = returnParsedJsonObject(result);
             if(jsonResult == 0){
-                Toast.makeText(MainActivity.this, "Invalid username or password", Toast.LENGTH_LONG).show();
+                Toast.makeText(StartingActivity.this, "Invalid username or password", Toast.LENGTH_LONG).show();
                 return;
             }
             if(jsonResult == 1){
-                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
+                Intent intent = new Intent(StartingActivity.this, LoginActivity.class);
                 intent.putExtra("USERNAME", enteredUsername);
                 intent.putExtra("MESSAGE", "You have been successfully login");
                 startActivity(intent);
