@@ -130,7 +130,9 @@ public class MainMenuActivity extends Activity {
 
             forum_button.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View v) {
-                   //Need forum class
+                    Intent forum_intent = new Intent(getApplicationContext(), Forum.class);
+                    forum_intent.putExtra("Title", questionText);
+                    startActivity(forum_intent);
                 }
             });
 
@@ -177,6 +179,12 @@ public class MainMenuActivity extends Activity {
         }
     }
 
+    public void create_category(View view) {
+        if(melos_dep) {
+            Intent category_intent = new Intent(getApplicationContext(), CategoryActivity.class);
+            startActivity(category_intent);
+        }
+    }
 
     public void SearchPoll() {
 
