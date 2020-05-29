@@ -8,6 +8,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -17,6 +18,8 @@ import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 
 public class MainMenuActivity extends Activity {
@@ -91,16 +94,19 @@ public class MainMenuActivity extends Activity {
     }
 
     private void add_poll_to_main_menu(String s, String subjectText, final String questionText, boolean checked, String time) {
+        Psifoforia psifoforia = new Psifoforia();
         if(s.equals("Yes-No")){
-
+            psifoforia.setPollType(0);// for yes no
             LayoutInflater vi = (LayoutInflater) getApplicationContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             final View poll_created_view = vi.inflate(R.layout.poll_created_yes_no, null);
 
             TextView question = (TextView) poll_created_view.findViewById(R.id.textview_question);
             question.setText(questionText);
+            psifoforia.setTitlos(questionText);
 
             TextView subject = (TextView) poll_created_view.findViewById(R.id.textview_subject);
             subject.setText(subjectText);
+            //psifoforia.setKatigoria();
 
             CheckBox anonimity = (CheckBox) poll_created_view.findViewById(R.id.anonymity);
             anonimity.setChecked(checked);
@@ -146,6 +152,7 @@ public class MainMenuActivity extends Activity {
 
 
             int time_in_ms = 60000*(minutes+(60*(hours+(24*days))));
+            psifoforia.setMsDuration(time_in_ms);
 
             new CountDownTimer(time_in_ms, 1000) {
 

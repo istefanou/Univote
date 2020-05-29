@@ -60,8 +60,9 @@ public class CategoryActivity extends ActionBarActivity {
                 }
 
                 // request authentication with remote server4
+                Katigoria katigoria = new Katigoria(enteredCategoryName);
                 CreateCategory asyncRequestObject = new CreateCategory();
-                asyncRequestObject.execute(serverUrl, enteredCategoryName);
+                asyncRequestObject.execute(serverUrl, katigoria.getTitlos());
             }
         });
     }
