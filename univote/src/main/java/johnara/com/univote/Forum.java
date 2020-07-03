@@ -1,5 +1,5 @@
 package johnara.com.univote;
-// ERROR MERGE
+// TEST MERGE
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
